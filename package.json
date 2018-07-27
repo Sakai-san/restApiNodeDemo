@@ -1,0 +1,28 @@
+{
+  "name": "demo-graphql",
+  "version": "1.0.0",
+  "description": "Very tiny application for showing the power of graphQL",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "start": "./node_modules/nodemon/bin/nodemon.js server.js",
+    "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
+    "init-db": "cd /opt/lampp/bin/ && echo 'CREATE DATABASE IF NOT EXISTS rest_api_node_demo' | ./mysql -u root"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "nodemon": "^1.18.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "infocentric",
+  "license": "ISC"
+}
