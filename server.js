@@ -1,8 +1,14 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const db = require("./models");
 const graphqlDemo = require('./lib');
 const routes = require("./app/routes/apiRoutes");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text() );
+app.use(bodyParser.json({type: 'application/vnf.api+json'}));
 
 routes(app, db);
 

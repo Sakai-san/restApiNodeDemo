@@ -3,41 +3,37 @@ module.exports = (app, db) => {
     db.post.findAll().then( (result) => res.json(result) )
   );
 
+  app.post("/post", (req, res) => {
+    db.post.create({
+      title: req.body.title,
+      content: req.body.content
+    }).then( (result) => res.json(result) )
+  });
+
   app.all( "/post/:id", (req, res) => {
 
-    const post = {
-      updateDate: Date.now(),
-      content: req.post && req.post.content || ''
-    };
-
     if(req.method === 'PUT'){
-      res.json( {title: "ok"} );
+      db.post.update({
+        title: req.body.title,
+        content: req.body.content
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then( (result) => res.json(result) )
     }
     else if (req.method === 'DELETE'){
-      res.json( {title: "ok"} );
+      db.post.delete({
+        where: {
+          id: req.params.id
+        }
+      }).then( (result) => res.json(result) )
     }
     // get
     else {
-      res.json( {title: "ok"} );
+      db.post.findById(req.params.id).then( (result) => res.json(result) )
     }
   });
 
-  app.delete( "/post", (req, res) => {
-    const post = {
-      updatedDate: Date.now(),
-      content: req.post && req.post.content || ''
-    };
-
-    if(req.method === 'PUT'){
-      return {title: "bonjour"};
-    }
-    else if (req.method === 'DELETE'){
-      res.json( {title: "ok"} );
-    }
-    // get
-    else {
-      const id = req.params.id;
-      res.json( {title: "ok"} );
-    }
-  });  
 }

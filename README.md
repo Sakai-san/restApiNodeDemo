@@ -18,3 +18,7 @@
   Goal of this tutorial is to introduce in a few steps how does graphql work.
   On that purpose we did not add a security layer. In a prod env you should use the bodyParser module on
   that purpose.
+  * in this demo we are using a so called ORM for avoid mixing up JS and SQL and we can create table not by having a separate sql script. Indeed we do not want to have statement like this :
+    connection.query(" SELECT * from Author WHERE name=?", 'David', (error, result)=> {
+
+    });
