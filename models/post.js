@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      author_id: {
+      authorId: {
         type: DataTypes.INTEGER,
         references: {
           model: sequelize.models.author,

@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text() );
 app.use(bodyParser.json({type: 'application/vnf.api+json'}));
 
+app.use(express.static("app/public"));
+
 routes(app, db);
 
 db.sequelize.sync().then( () => {
@@ -24,9 +26,15 @@ console.log(  graphqlDemo.bestScore(grades) ) ;
 
 /*
 
-INSERT INTO `authors`(`firstName`, `lastName`, `birthDate`) VALUES ("Thomas","rubattel", "1979-04-22");
-INSERT INTO `posts`(`title`, `content`, `createdAt`, `updatedAt`, `author_id`) VALUES ("premier post","on va traiter des types en js",now(),now(), (select id from authors where firstName = 'Thomas' ));
+INSERT INTO `author`(`firstName`, `lastName`, `birthDate`) VALUES ("Thomas","rubattel", "1979-04-22");
+INSERT INTO `post`(`title`, `content`,  `author_id`) VALUES ("premier post","on va traiter des types en js", (select id from author where firstName = 'Thomas' ));
+
+restapi 
+https://www.youtube.com/watch?v=oe0rkp14osg
+https://www.youtube.com/watch?v=De-WBBqUMSo
+
 
 graphql
+https://www.youtube.com/watch?v=hqk30IVeYak
 https://www.youtube.com/watch?v=xBAJ5nQkeiM
 */

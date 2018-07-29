@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <script>
+    let container = document.getElementById("container");
+    const h1 = document.createElement('h2');
+    const title = document.createTextNode("Rest test");
+
+    h1.appendChild(title);
+
+    container.append(h1);
+
+    fetch("/posts", {
+      headers: {'Content-Type': 'application/json; charset=utf-8'}
+    })
+      .then((response) => response.json())
+      .then((posts) => {
+        console.log("coucou", posts);
+        container.append(JSON.stringify(posts));
+      })
+      .catch(function (e) {
+        console.warn(e);
+      });
+  </script>
+</body>
+
+</html>
