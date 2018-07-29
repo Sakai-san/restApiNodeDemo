@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
       birthDate: DataTypes.DATE
+  },
+  {
+    freezeTableName: true
   });
 
   return Author;

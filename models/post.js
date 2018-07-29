@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true
       },
       title: DataTypes.STRING,
-      content: DataTypes.TEXT,
+      content: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
       author_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -14,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       }
+  },
+  {
+    freezeTableName: true
   });
 
   return Post;
