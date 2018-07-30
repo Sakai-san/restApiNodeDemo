@@ -54,7 +54,6 @@
       };
 
       const ul = document.querySelectorAll('#container ul')[0];
-
       let resolvedPosts = null;
 
       fetch("/posts")
@@ -62,7 +61,7 @@
         .then((posts) => {
           resolvedPosts = posts;
           return Promise.all(
-            posts.map((post) => fetch(`/author/${post.authorId}`).then(r => r.json()))
+            posts.map((post) => fetch(`/author/${post.authorId}`).then((r) => r.json()))
           );
         })
         .then((authors) => {
