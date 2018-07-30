@@ -35,16 +35,12 @@
     document.addEventListener('DOMContentLoaded', function () {
       const ul = document.querySelectorAll('#container ul')[0];
 
-      fetch("/posts", {
-        headers: {'Content-Type': 'application/json; charset=utf-8'}
-      })
+      fetch("/posts")
         .then((response) => response.json())
         .then((posts) => {
           const agrementedPost = [...posts];
           posts.forEach((post, index) => {
-            fetch(`/author/${post.authorId}`, {
-              headers: {'Content-Type': 'application/json; charset=utf-8'}
-            })
+            fetch(`/author/${post.authorId}`)
               .then((authorResponse) => authorResponse.json())
               .then((author) => {
                 agrementedPost[index] = {...agrementedPost[index], author};
