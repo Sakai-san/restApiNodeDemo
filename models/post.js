@@ -10,17 +10,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      authorId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: sequelize.models.author,
-          key: 'id'
-        }
-      }
-  },
-  {
-    freezeTableName: true
-  });
+    },
+    {
+      freezeTableName: true,
+    }
+  );
+
+  Post.associate = (models) => {
+    Post.belongsTo(models.author);
+  };
 
   return Post;
 }

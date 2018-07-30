@@ -10,30 +10,31 @@ module.exports = (app, db) => {
     }).then( (result) => res.json(result) )
   });
 
-  app.all( "/post/:id", (req, res) => {
-
-    if(req.method === 'PUT'){
-      db.post.update({
-        title: req.body.title,
-        content: req.body.content
-      },
-      {
-        where: {
-          id: req.params.id
-        }
-      }).then( (result) => res.json(result) )
-    }
-    else if (req.method === 'DELETE'){
-      db.post.delete({
-        where: {
-          id: req.params.id
-        }
-      }).then( (result) => res.json(result) )
-    }
-    // get
-    else {
-      db.post.findById(req.params.id).then( (result) => res.json(result) )
-    }
+  app.put( "/post/:id", (req, res) => {
+    db.post.update({
+      title: req.body.title,
+      content: req.body.content
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }).then( (result) => res.json(result) )
   });
 
+  app.put( "/post/:id", (req, res) => {
+    db.post.delete({
+      where: {
+        id: req.params.id
+      }
+    }).then( (result) => res.json(result) )
+  });
+
+  app.get( "/post/:id", (req, res) => {
+    db.post.findById(req.params.id).then( (result) => res.json(result))
+  });
+
+  app.get( "/author/:id", (req, res) => {
+    db.author.findById(req.params.id).then( (result) => res.json(result))
+  });
 }

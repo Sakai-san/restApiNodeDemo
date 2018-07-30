@@ -6,12 +6,16 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true
       },
       firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      birthDate: DataTypes.DATE
-  },
-  {
-    freezeTableName: true
-  });
+      lastName: DataTypes.STRING
+    },
+    {
+      freezeTableName: true,
+    }
+  );
+
+  Author.associate = (models) => {
+    Author.hasMany(models.post);
+  };
 
   return Author;
 }
