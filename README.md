@@ -1,5 +1,9 @@
 # Tutorial on how to create a rest api with nodejs, sequelize
 
+## keywords
+ES2015, restful, REST, api, expressjs. nodejs, promise, ORM, sequelize, relationnal database,
+
+
 ## Goal
   Goal of this tutorial is to introduce in a few steps how does graphql work.
 
