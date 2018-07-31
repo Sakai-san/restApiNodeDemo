@@ -55,3 +55,24 @@ This brillant idea has been developed by [Fielding](https://de.wikipedia.org/wik
 
 ## Actually consume your api
   create a routeAPi
+
+
+
+
+
+
+
+  Setup a REST API with Sequelize and Express.js
+Introduction
+In this tutorial all steps for building a REST API is  detailed. On that purpose we are going to use mainly two node.js modules, namely Sequelize and Express.js. The second one is lightweight web framework while the first one is an ORM for, as its name suggests, SQL based database.
+A bit of theory
+What is a REST API ? A REST API is a set of URIs performing precise actions on data.
+What kind of actions ? The actions are the so-called CRUD actions, namely Create, Read, Update, Delete. The main idea of REST is to associate the HTTP protocol with the CRUD actions mentioned above. Indeed HTTP has distinguished kind of HTTP request, namely (among others) POST, GET, PUT, DELETE. HTTP header of an HTTP request contains the type of the HTTP request called the method, also known under HTTP verb.
+REST provides thus an uniformed way to build interface between applications. REST has been first designed by Fielding in his PHD thesis.
+Starting point
+Since REST performed actions on data, the starting point would be to look at data structure of your service. For the sake of this tutorial we'll use a very simple data schema.
+Environment setup
+You need to install two independ software for this tutorial. First Node.js and second a database server. Regarding to Node.js we recommend you to install it through nvm. 
+Project setup
+cd the-location-you-want
+mkdir restApiNode
