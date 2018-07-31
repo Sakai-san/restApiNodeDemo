@@ -62,7 +62,7 @@ This brillant idea has been developed by [Fielding](https://de.wikipedia.org/wik
 
 
 
-  Setup a REST API with Sequelize and Express.js
+Setup a REST API with Sequelize and Express.js
 Introduction
 In this tutorial all steps for building a REST API is  detailed. On that purpose we are going to use mainly two node.js modules, namely Sequelize and Express.js. The second one is lightweight web framework while the first one is an ORM for, as its name suggests, SQL based database.
 A bit of theory
