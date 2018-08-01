@@ -1,7 +1,7 @@
 {
   "name": "restApiNodeDemo",
   "version": "1.0.0",
-  "description": "Very tiny application for showing the power of graphQL",
+  "description": "",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
