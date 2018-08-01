@@ -1,5 +1,5 @@
 {
-  "name": "demo-graphql",
+  "name": "restApiNodeDemo",
   "version": "1.0.0",
   "description": "Very tiny application for showing the power of graphQL",
   "scripts": {

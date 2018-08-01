@@ -1,7 +1,7 @@
-# Tutorial on how to create a rest api with nodejs, sequelize
+# Tutorial on how to create a rest api with Express.js and Sequelize
 
 ## keywords
-ES2015, restful, REST, api, expressjs. nodejs, promise, ORM, sequelize, relationnal database,
+restful, REST, api, expressjs. nodejs, promise, ORM, sequelize, relationnal database.
 
 
 ## Goal
