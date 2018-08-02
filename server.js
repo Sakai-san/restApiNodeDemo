@@ -13,13 +13,14 @@ apiPost(app, db);
 apiAuthor(app, db);
 
 db.sequelize.sync().then( () => {
+  // populate author table with dummy data
   db.author.bulkCreate(
     lodash.times(10, () => ({
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName()
     }))
   );
-
+  // populate post table with dummy data
   db.post.bulkCreate(
     lodash.times(10, () => ({
       title: faker.lorem.sentence(),
