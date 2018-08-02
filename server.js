@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser"); 
 const faker = require("faker");
 const lodash = require("lodash");
 const db = require("./models");
@@ -6,7 +7,7 @@ const apiPost = require("./app/api/post");
 const apiAuthor = require("./app/api/author");
 
 const app = express();
-
+app.use(bodyParser.json());                                                                                                
 app.use(express.static("app/public"));
 
 apiPost(app, db);
