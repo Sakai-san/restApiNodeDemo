@@ -31,15 +31,3 @@ db.sequelize.sync().then( () => {
     console.log("App listening on port 3000!")
   );
 });
-
-/*
-restapi 
-https://www.youtube.com/watch?v=oe0rkp14osg
-https://www.youtube.com/watch?v=De-WBBqUMSo
-
-
-graphql
-https://www.youtube.com/watch?v=hqk30IVeYak
-https://www.youtube.com/watch?v=xBAJ5nQkeiM
-
-*/
