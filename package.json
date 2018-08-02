@@ -15,7 +15,7 @@
   },
   "private": true,
   "keywords": [],
-  "author": "infocentric",
+  "author": "Infocentric Research AG, Baden, Switzerland",
   "license": "ISC",
   "devDependencies": {
     "faker": "^4.1.0",
