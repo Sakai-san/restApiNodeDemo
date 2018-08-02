@@ -1,21 +1,16 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const faker = require("faker");
 const lodash = require("lodash");
-
 const db = require("./models");
+const apiPost = require("./app/api/post");
+const apiAuthor = require("./app/api/author");
+
 const app = express();
-
-const routes = require("./app/routes/apiRoutes");
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text() );
-app.use(bodyParser.json({type: 'application/vnf.api+json'}));
 
 app.use(express.static("app/public"));
 
-routes(app, db);
+apiPost(app, db);
+apiAuthor(app, db);
 
 db.sequelize.sync().then( () => {
   db.author.bulkCreate(
