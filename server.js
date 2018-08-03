@@ -30,6 +30,6 @@ db.sequelize.sync().then( () => {
     }))
   );
   app.listen(8080, () => 
-    console.log("App listening on port 3000!")
+    console.log("App listening on port 8080!")
   );
 });
