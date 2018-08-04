@@ -3,6 +3,10 @@ module.exports = (app, db) => {
     db.post.findAll().then( (result) => res.json(result) )
   );
 
+  app.get( "/post/:id", (req, res) =>
+    db.post.findById(req.params.id).then( (result) => res.json(result))
+  );
+
   app.post("/post", (req, res) => 
     db.post.create({
       title: req.body.title,
@@ -22,15 +26,11 @@ module.exports = (app, db) => {
     }).then( (result) => res.json(result) )
   );
 
-  app.put( "/post/:id", (req, res) =>
-    db.post.delete({
+  app.delete( "/post/:id", (req, res) =>
+    db.post.destroy({
       where: {
         id: req.params.id
       }
     }).then( (result) => res.json(result) )
-  );
-
-  app.get( "/post/:id", (req, res) =>
-    db.post.findById(req.params.id).then( (result) => res.json(result))
   );
 }
