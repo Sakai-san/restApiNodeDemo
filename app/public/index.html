@@ -54,26 +54,30 @@
       };
 
       const ul = document.querySelectorAll('#container ul')[0];
-      let resolvedPosts = null;
 
-      fetch("/posts")
-        .then((response) => response.json())
+      const promisePosts = fetch("/posts")
+        .then((response) => response.json());
+
+      const promiseAuthors = promisePosts
         .then((posts) => {
-          resolvedPosts = posts;
           return Promise.all(
             posts.map((post) => fetch(`/author/${post.authorId}`).then((r) => r.json()))
           );
-        })
-        .then((authors) => {
+        });
+
+
+      Promise.all([promisePosts, promiseAuthors])
+        .then(([posts, authors]) => {
           authors.forEach((author, index) => {
-            if (resolvedPosts[index]) {
-              const aggrementedPost = {...resolvedPosts[index], author};
+            if (posts[index]) {
+              const aggrementedPost = {...posts[index], author};
               renderPost(ul, aggrementedPost);
             }
           })
         })
         .catch((e) => console.error(e));
-    });      
+
+    });
   </script>
 </body>
 
