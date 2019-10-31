@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run init-db && npx nodemon server.js",
+    "start": "npm run init-db && npx nodemon --exec babel-node server.js",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
@@ -18,6 +18,9 @@
   "author": "Infocentric Research AG, Baden, Switzerland",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
     "faker": "^4.1.0",
     "lodash.random": "^3.2.0",
     "lodash.times": "^4.3.2",

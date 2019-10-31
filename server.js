@@ -1,11 +1,11 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const faker = require("faker");
-const times = require("lodash.times");
-const random = require("lodash.random");
-const db = require("./models");
-const apiPost = require("./app/api/post");
-const apiAuthor = require("./app/api/author");
+import express from "express";
+import bodyParser from "body-parser";
+import faker from "faker";
+import times from "lodash.times";
+import random from "lodash.random";
+import db from "./models";
+import apiPost from "./app/api/post";
+import apiAuthor from "./app/api/author";
 
 const app = express();
 app.use(bodyParser.json());
