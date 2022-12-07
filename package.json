@@ -8,8 +8,8 @@
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "mysql2": "^1.5.3",
     "sequelize": "^5.9.4"
   },
